@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .newClass{
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="eyed" onclick="test()">eyed</div>
+    <div class="klass">klass</div>
+    <a href="#hello">Click me</a>
+</body>
+<script src="library.js"></script>
+<script>
+    
+    SweetSelector.ajax({
+        url:'https://swapi.co/api/people',
+        type: 'GET',
+        success: function (data){
+            console.log(data)
+        },
+        fail: function(err){
+            console.log(err)
+        }
+    })
+    
+
+        function test(){
+            $('#eyed').hide()
+            SweetSelector.select('#eyed').SweetSelector.hide()
+    setTimeout(function(){
+        $('#eyed').SweetSelector.show()
+    },1000)
+        }
+    
+
+
+
+    
+    
+</script>
+</html>
